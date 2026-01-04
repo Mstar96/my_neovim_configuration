@@ -60,7 +60,6 @@ vim.keymap.set("n", "<leader>tt", function()
   vim.cmd("terminal")
   vim.cmd("startinsert")
 end, { silent = true })
-
 --------------------------------------------------
 -- 终端模式下的窗口切换
 --------------------------------------------------
@@ -68,12 +67,10 @@ vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { silent = true })
 vim.keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { silent = true })
 vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { silent = true })
 vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { silent = true })
-
 --------------------------------------------------
 -- 终端模式：Esc 回普通模式
 --------------------------------------------------
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { silent = true })
-
 --------------------------------------------------
 --entering terminal with insert mode
 vim.api.nvim_create_autocmd("WinEnter",{
@@ -89,12 +86,10 @@ vim.api.nvim_create_autocmd("WinEnter",{
 vim.keymap.set("n", "<leader>bn", ":bn<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bp", ":bp<CR>", { silent = true })
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", { silent = true })
-
 --------------------------------------------------
 -- 关闭当前窗口 / 终端（⚠️ 不直接 exit nvim）
 --------------------------------------------------
 vim.keymap.set("n", "<leader>x", ":close<CR>", { silent = true })
-
 --------------------------------------------------
 -- Tab 管理
 --------------------------------------------------
@@ -103,13 +98,13 @@ vim.keymap.set("n", "<leader>to", ":tabonly<CR>", { silent = true })
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { silent = true })
 vim.keymap.set("n", "<leader>tl", ":tabnext<CR>", { silent = true })
 vim.keymap.set("n", "<leader>th", ":tabprev<CR>", { silent = true })
-
 --------------------------------------------------
 -- netrw 快捷打开
 --------------------------------------------------
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { silent = true })
-
 --------------------------------------------------
+---glow to read markdown file
+vim.keymap.set("n","<leader>md",":vsplit | terminal glow %<CR>", {silent = true})
 -- lazy.nvim
 --------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
